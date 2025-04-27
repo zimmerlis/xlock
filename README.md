@@ -7,7 +7,7 @@ The idea for this project arose from the need to manage all groups registered in
 
 ## Installation
 
-Git Clone to C:\Users\yourname\Documents\WindowsPowerShell\Modules (or in any ohter pS Module folder of your choice).
+Git Clone to C:\Users\yourname\Documents\WindowsPowerShell\Modules (or in any ohter Power Shell Module folder of your choice).
 Or download the content and place it in C:\Users\yourname\Documents\WindowsPowerShell\Modules\xlock.
 
 ## Quick Start
