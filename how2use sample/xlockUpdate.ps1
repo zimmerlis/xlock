@@ -16,16 +16,27 @@
     René Zimmerli
 #>
 
+<# Only Once -> Unblock File
+ Set-ExecutionPolicy -ExecutionPolicy Unrestricted
+ Get-ChildItem -Path "C:\Users\admin\Documents\WindowsPowerShell\Modules\xlock" -Recurse | Unblock-File
+ # Install Module 
+if ((Get-Module PoshLog -ListAvailable).Count -eq 0) {Install-Module PoshLog -Scope AllUsers -Force -MinimumVersion 2.1.0}
+if ((Get-Module CredentialManager -ListAvailable).Count -eq 0) {Install-Module CredentialManager -Scope AllUsers -Force}
+#>
+
 Add-Type -AssemblyName System.Web
+Import-Module CredentialManager
+Import-Module PoShLog
+
+$ScriptPath = "C:\InfrastrukturData\Tools\Glutz"
+
+# Create CSV Directory
+if (-Not (Test-Path -Path "$ScriptPath\CSV")) {
+    New-Item -Path "$ScriptPath\CSV" -ItemType Directory
+}
 
 # Create new logger
 
-if ((Get-Module PoshLog -ListAvailable).Count -eq 0) {
-  Install-Module PoshLog -Scope AllUsers -Force -MinimumVersion 2.1.0
-}
-Import-Module PoShLog
-
-$ScriptPath = "$env:HOMEDRIVE\Utilities\xlock"
 $LogLevelSwitch = New-LevelSwitch -MinimumLevel Info
 $LogLevelDebugSwitch = New-LevelSwitch -MinimumLevel Debug
 $ConsoleLevelSwitch = New-LevelSwitch -MinimumLevel Info #Warning
@@ -44,7 +55,7 @@ New-Logger |
 
 # Set Environment Variables
 
-$UserName = "infrastruktur@pfimi-sg.ch"
+$UserName = "user@yourdomain.com"
 $Server = "api.xlock.app"
 $Debug = $false
 $env:Debug = [bool]$Debug
