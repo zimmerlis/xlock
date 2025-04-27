@@ -1,0 +1,3 @@
+﻿label;Subsystems.label;Media.uid;Media.publicMediaLabel;Media.description;Media.validFrom;Media.validTo;Media.actionProfile;Codes.code;Codes.description;Codes.validFrom;Codes.validTo;Codes.actionProfile;group;Mobiltelefon;E-Mail;Spezialrechte
+Nachname1, Vorname1;;01234567890120;;Nachname1, Vorname1;;;Default;;;;;;"094_Untermieter_NewLifeChurch;120_Reinigung;100_Mitarbeiter";+41 00 000 00 01;user1@mail.com;
+Nachname2, Vorname2;;01234567890121;;Nachname2, Vorname2;;;Default;;;;;;"800_Angestellte;154_Moderatoren;152_KleingruppenLeiter;150_Worship;100_Mitarbeiter";+41 00 000 00 02;user2@mail.com;
